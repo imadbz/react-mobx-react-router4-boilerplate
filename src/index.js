@@ -1,16 +1,19 @@
-import("./styles/main.scss");
-import React from "react";
-import { render } from "react-dom";
-import { BrowserRouter as Router } from "react-router-dom";
-import { Provider } from "mobx-react";
-import { AppContainer } from "react-hot-loader";
-import { rehydrate, hotRehydrate } from "rfx-core";
+import style from './styles/main.sass'
 
-import { isProduction } from "./utils/constants";
-import App from "./components/App";
-import stores from "./stores/stores";
+import React from "react"
+import { render } from "react-dom"
+import { BrowserRouter as Router } from "react-router-dom"
+import LazyRoute from "lazy-route" 
 
-const store = rehydrate();
+import { Provider } from "mobx-react"
+import { AppContainer } from "react-hot-loader"
+import { rehydrate, hotRehydrate } from "rfx-core"
+
+import { isProduction } from "./utils/constants"
+import App from "./components/App"
+import stores from "./stores/stores"
+
+const store = rehydrate()
 
 const renderApp = Component => {
 	render(
@@ -22,11 +25,11 @@ const renderApp = Component => {
 			</Router>
 		</AppContainer>,
 		document.getElementById("root")
-	);
-};
+	)
+}
 
-renderApp(App);
+renderApp(App)
 
 if (module.hot) {
-	module.hot.accept(() => renderApp(App));
+	module.hot.accept(() => renderApp(App))
 }

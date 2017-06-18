@@ -1,7 +1,7 @@
-var path = require("path");
-var webpack = require("webpack");
-var HtmlWebpackPlugin = require("html-webpack-plugin");
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var path = require("path") 
+var webpack = require("webpack") 
+var HtmlWebpackPlugin = require("html-webpack-plugin") 
+var ExtractTextPlugin = require("extract-text-webpack-plugin") 
 
 module.exports = {
     entry: {
@@ -34,7 +34,7 @@ module.exports = {
                 }
             },
             {
-                test: /\.scss|css$/i,
+                test: /\.scss|sass|css$/i,
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
                     use: [
@@ -107,4 +107,4 @@ module.exports = {
             template: "./index.hbs"
         })
     ]
-};
+} 

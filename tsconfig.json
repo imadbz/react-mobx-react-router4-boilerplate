@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "sourceMap": true,
+        "removeComments": true,
+        "experimentalDecorators": true,
+        "allowJs": true
+    }
+}

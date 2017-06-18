@@ -1,6 +1,6 @@
-var path = require("path");
-var webpack = require("webpack");
-var HtmlWebpackPlugin = require("html-webpack-plugin");
+var path = require("path") 
+var webpack = require("webpack") 
+var HtmlWebpackPlugin = require("html-webpack-plugin") 
 
 module.exports = {
     entry: [
@@ -45,7 +45,7 @@ module.exports = {
                 }
             },
             {
-                test: /\.scss|css$/,
+                test: /\.scss|sass|css$/,
                 use: [
                     "style-loader",
                     "css-loader",
@@ -93,4 +93,4 @@ module.exports = {
         new HtmlWebpackPlugin({ hash: false, template: "./index.hbs" }),
         new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /nb/)
     ]
-};
+} 
