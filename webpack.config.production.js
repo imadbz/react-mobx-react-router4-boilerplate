@@ -39,7 +39,7 @@ module.exports = {
                     fallback: "style-loader",
                     use: [
                         "css-loader",
-                        "postcss-loader",
+                        "postcss-loader?sourceMap",
                         "resolve-url-loader",
                         "sass-loader?sourceMap"
                     ]
@@ -52,10 +52,15 @@ module.exports = {
                     {
                         loader: "image-webpack-loader",
                         options: {
-                            progressive: true,
-                            optimizationLevel: 7,
-                            interlaced: false,
-                            pngquant: {
+                            mozjpeg: {
+                                progressive: true,
+                            },
+                            gifsicle: {
+                                interlaced: false,
+                            },
+                            optipng: {
+                                optimizationLevel: 4,
+                            },pngquant: {
                                 quality: "65-90",
                                 speed: 4
                             }

@@ -34,7 +34,7 @@ module.exports = {
                 loader: "babel-loader",
                 options: {
                     presets: [
-                        ["es2015", {"modules": false}],
+                        ["es2015", { "modules": false }],
                         "stage-0",
                         "react"
                     ],
@@ -61,10 +61,15 @@ module.exports = {
                     {
                         loader: "image-webpack-loader",
                         options: {
-                            progressive: true,
-                            optimizationLevel: 7,
-                            interlaced: false,
-                            pngquant: {
+                            mozjpeg: {
+                                progressive: true,
+                            },
+                            gifsicle: {
+                                interlaced: false,
+                            },
+                            optipng: {
+                                optimizationLevel: 4,
+                            }, pngquant: {
                                 quality: "65-90",
                                 speed: 4
                             }
